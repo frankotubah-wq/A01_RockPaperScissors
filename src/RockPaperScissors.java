@@ -50,17 +50,26 @@ public class RockPaperScissors {
         playerA = playerA.toUpperCase();
         playerB = playerB.toUpperCase();
 
-        if (playerA.equals(playerB)) {
-            System.out.println("It's a tie!");
-        } else if (
-                (playerA.equals("R") && playerB.equals("S")) ||
-                        (playerA.equals("P") && playerB.equals("R")) ||
-                        (playerA.equals("S") && playerB.equals("P"))
-        ) {
-            System.out.println("Player A wins!");
-        } else {
-            System.out.println("Player B wins!");
-        }
+
+            if (playerA.equals(playerB)) {
+                System.out.println("It's a tie!");
+            } else if (
+                    (playerA.equals("R") && playerB.equals("S")) ||
+                            (playerA.equals("S") && playerB.equals("R"))
+            ) {
+                System.out.println("Rock breaks Scissors.");
+                System.out.println(playerA.equals("R") ? "Player A wins!" : "Player B wins!");
+            } else if (
+                    (playerA.equals("P") && playerB.equals("R")) ||
+                            (playerA.equals("R") && playerB.equals("P"))
+            ) {
+                System.out.println("Paper covers Rock.");
+                System.out.println(playerA.equals("P") ? "Player A wins!" : "Player B wins!");
+            } else {
+                System.out.println("Scissors cuts Paper.");
+                System.out.println(playerA.equals("S") ? "Player A wins!" : "Player B wins!");
+            }
+
 
             // Ask if the players want to play again
             do {
